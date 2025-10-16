@@ -3,75 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entre Luces y Cámara - ELYC</title>
+  <title>Entre Luces y Cámara - Presentación</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Fuente moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <!-- Animaciones -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #2a004f, #5e0080, #8b2f94);
+      color: white;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      color: #FFD700;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+      animation: fadeInDown 2s ease;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.6;
+      animation: fadeIn 2.5s ease;
+    }
+
+    .logo {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+      margin-bottom: 30px;
+      animation: pulse 4s infinite;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 40px;
+      background-color: #FFD700;
+      color: #4b0082;
+      font-size: 1.1em;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      animation: fadeInUp 3s ease;
+    }
+
+    .btn:hover {
+      background-color: white;
+      transform: scale(1.05);
+    }
+
+    /* Fondo animado con brillo */
+    .light {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15), transparent 70%);
+      animation: shimmer 10s infinite alternate;
+    }
+
+    /* Animaciones */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.6); }
+      50% { box-shadow: 0 0 40px rgba(255, 215, 0, 1); }
+    }
+
+    @keyframes shimmer {
+      0% { opacity: 0.4; }
+      100% { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="assets/logo.png" alt="Logo ELYC">
-      <h1 class="glow">ELYC</h1>
-      <p>Entre Luces y Cámaras - Prensa Católica</p>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="noticias.html">Noticias</a></li>
-        <li><a href="Reflexión.html">Reflexión</a></li>
-        <li><a href="Multimedia.html">Multimedia</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="equipo.html">Nuestro Equipo</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="light"></div>
 
-  <section class="carousel">
-    <div class="slides" id="slides">
-      <img src="assets/carousel1.jpg" alt="Imagen 1">
-      <img src="assets/carousel2.jpg" alt="Imagen 2">
-      <img src="assets/carousel3.jpg" alt="Imagen 3">
-    </div>
-    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="next" onclick="moveSlide(1)">&#10095;</button>
-  </section>
+  <!-- LOGO DEL PROYECTO -->
+  <img src="assets/logo_elyc.png" alt="Logo Entre Luces y Cámara" class="logo">
 
-  <section class="content">
-    <h2>Bienvenidos a ELYC</h2>
-    <p>Un espacio donde la fe, la comunicación y la devoción se encuentran. Inspirado en el Señor de los Milagros y el mensaje de esperanza que nos guía entre luces y cámara.</p>
-  </section>
+  <!-- TITULO -->
+  <h1>✨ Entre Luces y Cámara ✨</h1>
 
-  <section class="contacto" id="contacto">
-  <h2>Contáctanos</h2>
-  <p>¿Tienes noticias, reflexiones o material audiovisual para compartir con nuestra prensa católica?</p>
+  <!-- DESCRIPCIÓN -->
+  <p>
+    Proyecto de <strong>Prensa Católica</strong> dedicado a iluminar con fe, esperanza y devoción.
+    Inspirado en la imagen del <strong>Señor de los Milagros</strong>, buscamos comunicar la fe
+    a través de los medios digitales.
+  </p>
 
-  <form action="#" method="post">
-    <input type="text" name="nombre" placeholder="Tu nombre completo" required>
-    <input type="email" name="correo" placeholder="Tu correo electrónico" required>
-    <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
-    <button type="submit">Enviar mensaje</button>
-  </form>
-
-  <div class="info-extra">
-    <p>📍 Dirección: Sullana - Piura, Perú</p>
-    <p>📧 Email: prensa@elyc.pe</p>
-  </div>
-</section>
-
-  <footer>
-    <div class="social-links">
-      <a href="https://web.facebook.com/entrelucesycamaras" class="social facebook" title="Facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.3.2 2.3.2v2.6h-1.3c-1.3 0-1.7.8-1.7 1.6V12H17l-.5 3h-2.8v7A10 10 0 0 0 22 12"/></svg>
-      </a>
-      <a href="https://www.instagram.com/prensa_entre_luces_y_camaras?igsh=MXVzZmEyODltdWNxcg==" class="social instagram" title="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.8-.8a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/@elycprensa?_t=ZS-90JICsJTvRS&_r=1" class="social tiktok" title="TikTok">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8.5c1 0 2 .3 3 .8V6.1c-.9-.1-1.8-.4-2.7-.9-1.3-.7-2.3-1.8-2.9-3.2H11v14.7a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .6.1V11c-.2 0-.4-.1-.6-.1a5 5 0 1 0 5 5V8.3c.8.1 1.6.2 2.5.2z"/></svg>
-      </a>
-    </div>
-    <p>© 2025 ELYC - Entre Luces y Cámaras | Prensa Católica</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <!-- BOTÓN PARA ENTRAR AL SITIO -->
+  <a href="elyc.html" class="btn">🌐 Entrar al sitio principal</a>
 </body>
 </html>
