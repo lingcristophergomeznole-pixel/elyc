@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entre Luces y Cámaras - Presentación</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Entre Luces y Cámaras (ELYC)</title>
 
-  <!-- Fuente moderna -->
+  <!-- Fuentes y estilos -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Animaciones -->
   <style>
     * {
       margin: 0;
@@ -19,21 +18,22 @@
     }
 
     body {
-      background: linear-gradient(135deg, #2a004f, #5e0080, #8b2f94);
-      color: white;
+      background: linear-gradient(135deg, #3a006e, #6a0dad, #8b2f94);
+      color: #fff;
       text-align: center;
-      height: 100vh;
+      min-height: 100vh;
+      overflow-x: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      position: relative;
     }
 
     h1 {
-      font-size: 3.5em;
+      font-size: 3.2em;
       color: #FFD700;
-      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+      text-shadow: 3px 3px 15px rgba(0,0,0,0.8);
       animation: fadeInDown 2s ease;
     }
 
@@ -41,92 +41,169 @@
       font-size: 1.2em;
       max-width: 700px;
       margin: 20px auto;
-      line-height: 1.6;
+      line-height: 1.7;
       animation: fadeIn 2.5s ease;
     }
 
     .logo {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
-      margin-bottom: 30px;
+      object-fit: cover;
+      box-shadow: 0 0 25px rgba(255,215,0,0.7);
+      margin-bottom: 25px;
       animation: pulse 4s infinite;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 25px;
       padding: 15px 40px;
       background-color: #FFD700;
       color: #4b0082;
-      font-size: 1.1em;
       border-radius: 30px;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
       transition: all 0.3s ease;
-      animation: fadeInUp 3s ease;
+      animation: fadeInUp 2s ease;
     }
 
     .btn:hover {
-      background-color: white;
+      background-color: #fff;
       transform: scale(1.05);
     }
 
-    /* Fondo animado con brillo */
+    footer {
+      width: 100%;
+      background: rgba(0,0,0,0.2);
+      padding: 30px 0;
+      margin-top: 60px;
+    }
+
+    .contenido-footer {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .qr-footer img {
+      border: 3px solid #FFD700;
+      border-radius: 15px;
+      margin-top: 10px;
+    }
+
+    h3 {
+      color: #FFD700;
+    }
+
+    .copy {
+      font-size: 0.9em;
+      margin-top: 25px;
+      opacity: 0.8;
+    }
+
+    /* Botones flotantes */
+    .botones-scroll {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .botones-scroll button {
+      background-color: #FFD700;
+      color: #4b0082;
+      border: none;
+      padding: 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2em;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    .botones-scroll button:hover {
+      background-color: white;
+      transform: scale(1.1);
+    }
+
+    /* Fondo con brillo animado */
     .light {
       position: absolute;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15), transparent 70%);
-      animation: shimmer 10s infinite alternate;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(255,215,0,0.1), transparent 70%),
+                  radial-gradient(circle at 70% 70%, rgba(255,215,0,0.15), transparent 70%);
+      animation: shimmer 12s infinite alternate;
+      z-index: -1;
     }
 
-    /* Animaciones */
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeInDown { from {opacity: 0; transform: translateY(-30px);} to {opacity: 1; transform: translateY(0);} }
+    @keyframes fadeInUp { from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);} }
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    @keyframes pulse { 0%,100% {box-shadow:0 0 25px rgba(255,215,0,0.7);} 50% {box-shadow:0 0 40px rgba(255,215,0,1);} }
+    @keyframes shimmer { from {opacity: 0.4;} to {opacity: 1;} }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.6); }
-      50% { box-shadow: 0 0 40px rgba(255, 215, 0, 1); }
-    }
-
-    @keyframes shimmer {
-      0% { opacity: 0.4; }
-      100% { opacity: 1; }
+    @media (max-width: 768px) {
+      .contenido-footer { flex-direction: column; align-items: center; }
+      .logo { width: 150px; height: 150px; }
     }
   </style>
 </head>
 <body>
   <div class="light"></div>
 
-  <!-- LOGO DEL PROYECTO -->
-  <img src="assets/logo_elyc.png" alt="Logo Entre Luces y Cámara" class="logo">
+  <!-- LOGO -->
+  <img src="assets/logo.png" alt="Logo Entre Luces y Cámara" class="logo">
 
-  <!-- TITULO -->
-  <h1>✨ Entre Luces y Cámara ✨</h1>
+  <!-- TÍTULO -->
+  <h1>✨ Entre Luces y Cámaras ✨</h1>
 
   <!-- DESCRIPCIÓN -->
   <p>
-    Proyecto de <strong>Prensa Católica</strong> dedicado a iluminar con fe, esperanza y devoción.
-    Inspirado en la imagen del <strong>Señor de los Milagros</strong>, buscamos comunicar la fe
-    a través de los medios digitales.
+    Proyecto de <strong>Prensa Católica</strong> dedicado a iluminar con fe, esperanza y devoción.  
+    Inspirado en la imagen del <strong>Señor de los Milagros</strong>, buscamos comunicar la fe  
+    a través de los medios digitales con amor y compromiso cristiano.
   </p>
 
-  <!-- BOTÓN PARA ENTRAR AL SITIO -->
+  <!-- BOTÓN -->
   <a href="elyc.html" class="btn">🌐 Entrar al sitio principal</a>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="contenido-footer">
+      <div class="qr-footer">
+        <h3>📱 Escanea nuestro QR</h3>
+        <p>Accede directamente a <strong>Entre Luces y Cámara (ELYC)</strong></p>
+        <img src="assets/qr.png" alt="Código QR ELYC" width="180">
+      </div>
+
+      <div class="contador-footer">
+        <h3>👀 Contador de visitas</h3>
+        <p>Gracias por visitarnos 🙏</p>
+        <a href='https://www.free-counters.org/' style="color: #fff;">Contador web</a>
+        <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=8b953dbb81ddeb5db358e5abfa20caacdb2d6f3f'></script>
+        <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1428055/t/0"></script>
+      </div>
+    </div>
+    <p class="copy">© 2025 Entre Luces y Cámaras — Todos los derechos reservados</p>
+  </footer>
+
+  <!-- BOTONES FLOTANTES -->
+  <div class="botones-scroll">
+    <button id="btn-up" title="Subir"><i class="fa-solid fa-arrow-up"></i></button>
+    <button id="btn-down" title="Bajar"><i class="fa-solid fa-arrow-down"></i></button>
+  </div>
+
+  <script>
+    document.getElementById("btn-up").addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    document.getElementById("btn-down").addEventListener("click", () => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    });
+  </script>
 </body>
 </html>
